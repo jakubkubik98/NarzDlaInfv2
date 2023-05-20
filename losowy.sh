@@ -1,11 +1,8 @@
 #!/bin/bash
 
-# Funkcja wyświetlająca dzisiejszą datę
 show_date() {
   date "+%Y-%m-%d"
 }
-
-# Funkcja tworząca pliki error
 create_errors() {
   local count=$1
   local i=1
@@ -18,3 +15,7 @@ create_errors() {
     i=$((i+1))
   done
 }
+if [ $# -eq 0 ]; then
+  show_help
+  exit 0
+fi
